@@ -1,10 +1,13 @@
 # monster_soccer_main
-妖怪サッカーの紹介サイト（Play Console に登録するプライバシーポリシーの URL もここ）。
+妖怪サッカーの紹介サイト（13言語）。Play Console に登録するプライバシーポリシーの URL もここ（privacy.html）。
 
-- index.html … トップ（紹介）
-- privacy.html … プライバシーポリシー。元の文章は monster_soccer/docs/PRIVACY_POLICY.md。
-  直したら monster_soccer フォルダで `python misc/monster_soccer_main/tools/build_privacy.py` を実行すると、
-  このページとアプリ内・サーバーの文章がまとめて作り直されます。
-- assets/img/banner-ja.webp … バナー（1024×338）
+- index.html（日本語）, en.html, zh-hans.html … トップ
+- privacy.html（日本語）, privacy-en.html … プライバシーポリシー
+- assets/style.css, assets/img/banner-ja.webp（バナー 1024×338）
 
-actions ?
+## 文章の直し方
+ページは直接書きかえず、元の文章を直して作り直します。
+- プライバシーポリシー：monster_soccer/docs/PRIVACY_POLICY.md（日本語・正）と docs/privacy/<言語>.md（参考訳）
+- トップ：tools/site_text.py
+直したら monster_soccer フォルダで `python misc/monster_soccer_main/tools/build_privacy.py` を実行すると、
+全言語のページと、アプリ内（app/src/main/assets/legal/）・サーバー（/legal/privacy）の文章がまとめて作り直されます。
