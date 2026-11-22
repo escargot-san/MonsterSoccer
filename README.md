@@ -6,3 +6,5 @@
   直したら monster_soccer フォルダで `python misc/monster_soccer_main/tools/build_privacy.py` を実行すると、
   このページとアプリ内・サーバーの文章がまとめて作り直されます。
 - assets/img/banner-ja.webp … バナー（1024×338）
+
+actions ?
