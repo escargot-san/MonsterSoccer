@@ -1,0 +1,119 @@
+/* 妖怪サッカー 紹介サイト。よみカレのサイト（yomical-main）と同じ作りで、色だけ夜のスタジアムに合わせています。 */
+:root {
+  --accent: #4fd6ff;        /* タイトルロゴの青白い光 */
+  --accent-dark: #1aa3d6;
+  --accent-soft: rgba(79, 214, 255, .12);
+  --grass: #3fae5a;
+  --ink: #e8eef8;
+  --muted: #a9b6cc;
+  --line: rgba(255, 255, 255, .12);
+  --bg: #0b1324;            /* 夜空 */
+  --card: #131e36;
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(ellipse at top, #18284a 0%, var(--bg) 60%) fixed, var(--bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--accent); }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(11, 19, 36, .88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .inner {
+  max-width: 1080px; margin: 0 auto; padding: 0 16px;
+  height: 60px; display: flex; align-items: center; gap: 16px;
+}
+.brand {
+  font-weight: 800; font-size: 1.15rem; color: var(--ink); text-decoration: none;
+  display: flex; align-items: center; gap: 8px; white-space: nowrap;
+}
+.brand-mark {
+  width: 28px; height: 28px; border-radius: 7px; background: var(--accent-soft);
+  border: 1px solid var(--accent); display: grid; place-items: center; font-size: 15px;
+}
+.site-nav { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; }
+.site-nav a {
+  color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 500;
+  padding: 6px 10px; border-radius: 8px; white-space: nowrap;
+}
+.site-nav a:hover { background: var(--accent-soft); color: var(--accent); }
+
+/* Hero */
+.hero { max-width: 1080px; margin: 24px auto 0; padding: 0 16px; }
+.hero img { width: 100%; border-radius: var(--radius); box-shadow: 0 8px 40px rgba(79, 214, 255, .18); }
+
+/* Sections */
+main { max-width: 1080px; margin: 0 auto; padding: 0 16px 64px; }
+section { margin-top: 64px; }
+.eyebrow {
+  display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: .08em;
+  color: var(--accent); background: var(--accent-soft); padding: 2px 12px; border-radius: 999px;
+}
+h2 { font-size: 1.75rem; line-height: 1.4; margin: 12px 0 20px; }
+h3 { font-size: 1.15rem; margin: 0 0 6px; }
+p { margin: 0 0 1em; }
+
+.lead {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 28px 32px; font-size: 1.1rem;
+}
+.lead strong { color: var(--accent); }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
+}
+.card h3::before {
+  content: ""; display: inline-block; width: 6px; height: 1em; vertical-align: -2px;
+  margin-right: 10px; border-radius: 3px; background: var(--grass);
+}
+.card p, .card ul { color: var(--muted); margin: 0; }
+.card ul { padding-left: 1.2em; }
+.card li { margin: .3em 0; }
+.card b { color: var(--ink); }
+
+.note {
+  margin-top: 16px; padding: 14px 18px; border-radius: 12px;
+  background: rgba(246, 215, 122, .1); border: 1px solid rgba(246, 215, 122, .45); color: #f3dd9a; font-size: .95rem;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line); background: var(--card);
+  text-align: center; font-size: .85rem; color: var(--muted); padding: 24px 16px;
+}
+.site-footer a { margin: 0 8px; }
+
+/* Document page (privacy) */
+.doc {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 40px; margin-top: 32px;
+}
+.doc h1 { font-size: 1.8rem; margin: 0 0 4px; }
+.doc .updated { color: var(--muted); font-size: .9rem; margin-bottom: 24px; }
+.doc h2 { font-size: 1.15rem; margin: 32px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.doc h3 { font-size: 1rem; margin: 16px 0 4px; color: var(--accent); }
+.doc ul { padding-left: 1.3em; }
+.doc li { margin: .3em 0; }
+.doc a { word-break: break-all; }
+
+@media (max-width: 760px) {
+  h2 { font-size: 1.4rem; }
+  .lead { padding: 20px; font-size: 1rem; }
+  .site-nav a:not(.keep) { display: none; }
+  .doc { padding: 24px 20px; }
+  .doc h1 { font-size: 1.4rem; }
+}
